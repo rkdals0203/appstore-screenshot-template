@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "crescreendo": {
+      "type": "http",
+      "url": "https://crescreendo-cloud-mcp.crescreendo-rkdals0203.workers.dev/mcp"
+    }
+  }
+}

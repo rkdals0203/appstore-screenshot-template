@@ -1,0 +1,51 @@
+{
+  "title": "Local editing example",
+  "resources": [
+    {
+      "path": "assets/screen.png",
+      "sha256": "2b7eebbaacdea14f222ff579661ef802c411d620b61d976d2e6b7cea28796cae",
+      "bytes": 29987,
+      "id": "screen",
+      "kind": "image"
+    },
+    {
+      "path": "assets/Inter.ttf",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "bytes": 876576,
+      "id": "font",
+      "kind": "font",
+      "family": "Inter",
+      "weight": [
+        100,
+        900
+      ],
+      "style": "normal"
+    }
+  ],
+  "screenshots": [
+    "screen"
+  ],
+  "attachments": [
+    {
+      "path": "source/OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377
+    },
+    {
+      "path": "source/provenance.json",
+      "sha256": "2e1d2c15ec894c0a9df5bb3a0253492cd91d75ab84a21095e262728f6335904d",
+      "bytes": 483
+    }
+  ],
+  "format": "crescreendo.project",
+  "containerVersion": 1,
+  "document": {
+    "path": "document.json",
+    "sha256": "36a22e53d0787c3df1fa16557dfce6a88c2840f75f58f90f1eeb06aa02391f9e",
+    "bytes": 5721
+  },
+  "compatibility": {
+    "documentContract": "crescreendo.design.document-2",
+    "operations": 1
+  }
+}

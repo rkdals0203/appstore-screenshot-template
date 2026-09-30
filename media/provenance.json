@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-09-29",
+  "environment": "development-cloud",
+  "status": "verified",
+  "verificationScope": "README editing/persistence media only; not public Cloud release approval or source-fidelity certification",
+  "source": {
+    "url": "https://apps.apple.com/us/app/x/id333903271",
+    "captureDate": "2026-09-26",
+    "referenceFrames": 9,
+    "editorExcerpt": [
+      1,
+      2
+    ],
+    "historicalComparisonRenderDate": "2026-09-26",
+    "sourceAssetsDistributed": false
+  },
+  "runtime": {
+    "baseCommit": "7bba07a96044a380f5f801053a5fed55364e453b",
+    "browser": "Chrome on macOS arm64",
+    "workingFix": "Cloud browser upload entitlement alignment; renderer unchanged"
+  },
+  "edits": {
+    "replacement": {
+      "before": {
+        "revision": 0,
+        "documentHash": "3fed53ef69f902ecef191aed8162001fd463574bc6263e65c197af574dbfdb32"
+      },
+      "after": {
+        "revision": 5,
+        "documentHash": "09e19c1a21dea3a43dea86c2ba94780bcde33c68fd292ed21ce84cfd480ed417"
+      },
+      "screenBindingChanged": true,
+      "geometryUnchanged": [
+        "frame",
+        "rotation",
+        "tilt",
+        "device",
+        "frameStyle",
+        "screenFraming",
+        "shadow",
+        "effects",
+        "panorama projectionScope"
+      ],
+      "independentImagesUnchanged": true,
+      "headlineEdits": [
+        {
+          "id": "text-frame-1-0",
+          "text": "Your app.",
+          "sizing": "HEIGHT"
+        },
+        {
+          "id": "text-frame-1-1",
+          "text": "In seconds.",
+          "sizing": "WIDTH_AND_HEIGHT"
+        },
+        {
+          "id": "text-frame-1-9",
+          "text": "#1",
+          "sizing": "NONE"
+        },
+        {
+          "id": "text-frame-1-10",
+          "text": "news app",
+          "sizing": "NONE"
+        }
+      ],
+      "notes": "Second headline width was explicitly changed with Auto width in the actual UI. Screen replacement alone preserved the phone design."
+    },
+    "saveAndReopen": {
+      "sameDocument": true,
+      "kind": "project",
+      "revision": 3,
+      "documentHash": "143807484532589d8a6eb21e2b0f52e791f46450a8795a935fd57f951f553682",
+      "target": "Existing Crescreendo app",
+      "contributionConsentSubmitted": false
+    }
+  },
+  "export": {
+    "method": "Cloud browser editor Export PNG",
+    "frames": [
+      {
+        "frame": 1,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "37b06c83d8395c35e247339854842fcd2fa48d710b4734c6998994573fabc630"
+      },
+      {
+        "frame": 2,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "2eb781c262509d678fa0323e61196524b58b58a9dac816de2e692c47d87b805d"
+      },
+      {
+        "frame": 3,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "e29ed0547f04f33a8796ba4429fdfa84db0b2b7a3a7d0d666935faefdb1b0ef8"
+      },
+      {
+        "frame": 4,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "36c291380eaec016019f2914f082bd3fcc429ed5dfbc40d386ede781051e26d9"
+      },
+      {
+        "frame": 5,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "fdd726e4681c56cbe35bd707cb65eb075b5edd7d501066ccd64725fb05132a7e"
+      },
+      {
+        "frame": 6,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "475cb5004cc1b580ce87f638c3c72bdb7d53d11c3f14480b3d4f9f0b4be3c82a"
+      },
+      {
+        "frame": 7,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "f6e18416a328202f2d289d9dc5520af0b1db2f76df5e011992a6855b9622244c"
+      },
+      {
+        "frame": 8,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "49bcdeb9e2e3e08259d8c06ddc581b19fefb09a0abb46909f536f025fa81d611"
+      },
+      {
+        "frame": 9,
+        "width": 1284,
+        "height": 2778,
+        "sha256": "065074d1dad52152ce71004c6479f9675d07482cd765e7a643e056b15ea5a744"
+      }
+    ],
+    "serverAttempt": {
+      "status": "timed_out_then_canceled",
+      "limitSeconds": 180,
+      "passed": false
+    }
+  },
+  "assets": [
+    {
+      "file": "reference-to-editor.jpg",
+      "sha256": "df0cae03cf5c847b3cd361901a9059fff29660c6d4966d7e6506b26ad0396bf6",
+      "bytes": 131087,
+      "width": 1600,
+      "height": 712,
+      "sourceCapture": "original-source-and-real-editor-capture"
+    },
+    {
+      "file": "replace-screen.gif",
+      "sha256": "97cba8b976b66c91b8d037ea2f2c0bfac7937eaadc6d16e818c8d75a2a6ad788",
+      "bytes": 1725295,
+      "width": 1200,
+      "height": 648,
+      "sourceCapture": "continuous-screen-recording",
+      "sourceFps": 30,
+      "sourceFrameRateMode": "variable; idle frames are not emitted",
+      "outputFps": 25,
+      "frames": 311,
+      "seconds": 12.44,
+      "timeCompressed": true
+    },
+    {
+      "file": "replace-screen-poster.jpg",
+      "sha256": "33473f596ddcea6a505b6e8ae40b915144c6b07f557f79b6169b1ced4a683055",
+      "bytes": 87296,
+      "width": 1200,
+      "height": 648,
+      "sourceCapture": "recording-frame"
+    },
+    {
+      "file": "your-app.jpg",
+      "sha256": "fffcdfb2e761308a69cd100cc2c974e558534ed3f552898ce0d673fc7ab52efe",
+      "bytes": 150441,
+      "width": 1600,
+      "height": 950,
+      "sourceCapture": "cloud-browser-png-export"
+    },
+    {
+      "file": "save-and-reopen.gif",
+      "sha256": "3f925e2832c4401a891ab41c5408953046567a2a9ae449d8888c2a1c27a72b49",
+      "bytes": 3977117,
+      "width": 1200,
+      "height": 704,
+      "sourceCapture": "continuous-screen-recording",
+      "sourceFps": 30,
+      "sourceFrameRateMode": "variable; idle frames are not emitted",
+      "outputFps": 25,
+      "frames": 290,
+      "seconds": 11.6,
+      "timeCompressed": true
+    },
+    {
+      "file": "save-and-reopen-poster.jpg",
+      "sha256": "04bf6beced74e12ba401a84e79fa6228450e165accb5606c046841b427792326",
+      "bytes": 43451,
+      "width": 1200,
+      "height": 704,
+      "sourceCapture": "recording-frame"
+    },
+    {
+      "file": "full-set.jpg",
+      "sha256": "73c07e5025f705da30a2dd2cd1b989a1748b38ac0562705623d2fe6e64c6ebb8",
+      "bytes": 133792,
+      "width": 2000,
+      "height": 560,
+      "sourceCapture": "cloud-browser-png-export"
+    },
+    {
+      "file": "source-comparison.jpg",
+      "sha256": "bf9d16ad0949d5afb06d2d4dd6098fc02ad7e6657bb817c207b3a028e78221ce",
+      "bytes": 299655,
+      "width": 2000,
+      "height": 1080,
+      "sourceCapture": "original-source-and-historical-reconstruction-render"
+    }
+  ],
+  "recordings": [
+    {
+      "name": "replace-screen",
+      "sha256": "38edcc25ffc116471824892f3c1d7a6a208057069266d5f3ddc4993d20d38dfa",
+      "bytes": 4211799,
+      "captureFps": 30,
+      "emittedFrames": 1084,
+      "intervalsBetween25And45ms": 797,
+      "captureMethod": "Browser getDisplayMedia plus MediaRecorder; audio disabled",
+      "distributed": false
+    },
+    {
+      "name": "save-and-reopen",
+      "sha256": "65da40a5c659dbf6053c1c177fe39ed54a76a5c9cc6e25589c93bb1dcd4a1a81",
+      "bytes": 2863236,
+      "captureFps": 30,
+      "emittedFrames": 931,
+      "intervalsBetween25And45ms": 632,
+      "captureMethod": "Browser getDisplayMedia plus MediaRecorder; audio disabled",
+      "distributed": false
+    }
+  ],
+  "rights": {
+    "x": "Comparative reference; no endorsement or source-asset redistribution license implied",
+    "crescreendoMobileUi": "Authored concept artwork, not a shipped mobile product",
+    "publication": "Separate from preparation; no publication performed"
+  }
+}

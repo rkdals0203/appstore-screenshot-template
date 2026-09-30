@@ -1,0 +1,11 @@
+interface:
+  display_name: "App Store Screenshot Template"
+  short_description: "Reconstruct editable App Store screenshot templates"
+  default_prompt: "Use $appstore-screenshot-template to reconstruct this App Store screenshot set and open it in Crescreendo."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "crescreendo"
+      description: "Crescreendo cloud drafts, assets, editing and browser rendering"
+      transport: "streamable_http"
+      url: "https://crescreendo-cloud-mcp.crescreendo-rkdals0203.workers.dev/mcp"

@@ -1,0 +1,45 @@
+{
+  "title": "Image tilt and replacement",
+  "resources": [
+    {
+      "path": "assets/grid.png",
+      "sha256": "1eaa8216b1e36331d9fc421c8cb98ad08decf9452e558355eb0aba0dff298828",
+      "bytes": 14655,
+      "id": "grid",
+      "kind": "image"
+    },
+    {
+      "path": "assets/replacement-landscape.png",
+      "sha256": "4d1c3389281590fa14e0c7852707f87d45eebd16d327ea32c118571031d288aa",
+      "bytes": 12463,
+      "id": "replacement-landscape",
+      "kind": "image"
+    },
+    {
+      "path": "assets/replacement-square.png",
+      "sha256": "1d5faa2ced71c1f5a6c2282e9efa57aa5f9b4aa0a1fdc2c9754b2183142ab1c3",
+      "bytes": 9613,
+      "id": "replacement-square",
+      "kind": "image"
+    }
+  ],
+  "screenshots": [],
+  "attachments": [
+    {
+      "path": "source/provenance.json",
+      "sha256": "7d875b9aa3cc3afc73875b1c59f0ea00d6b7fae6d3e36201cce46b146427da56",
+      "bytes": 247
+    }
+  ],
+  "format": "crescreendo.project",
+  "containerVersion": 1,
+  "document": {
+    "path": "document.json",
+    "sha256": "10ee4ece858b22f20de8d90779f2298c68942c0f70cf71b433516bdb502fce75",
+    "bytes": 4892
+  },
+  "compatibility": {
+    "documentContract": "crescreendo.design.document-2",
+    "operations": 1
+  }
+}

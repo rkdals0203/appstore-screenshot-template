@@ -1,0 +1,5 @@
+{
+  "origin": "Original synthetic checkerboard and arrow artwork created for this example.",
+  "license": "MIT",
+  "purpose": "Replace content across aspect ratios while preserving crop, pose, groups, panorama and independent shared resources."
+}

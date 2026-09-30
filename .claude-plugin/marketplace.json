@@ -1,0 +1,17 @@
+{
+  "name": "crescreendo",
+  "owner": {
+    "name": "Crescreendo",
+    "url": "https://crescreendo.com"
+  },
+  "plugins": [
+    {
+      "name": "appstore-screenshot-template",
+      "source": "./plugins/appstore-screenshot-template",
+      "description": "Reconstruct App Store screenshots for free. Adapt and keep editing with your own AI on Pro."
+    }
+  ],
+  "metadata": {
+    "description": "App Store screenshot reconstruction with Crescreendo cloud editing."
+  }
+}

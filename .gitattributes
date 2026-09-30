@@ -1,0 +1,4 @@
+# Project archives validate exact fixture bytes, including text attachments.
+packages/porting-tools/examples/** -text
+# Preserve upstream font license text byte-for-byte.
+**/OFL.txt -whitespace

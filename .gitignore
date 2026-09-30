@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env*
+*.tgz
+!plugins/appstore-screenshot-template/.mcp.json

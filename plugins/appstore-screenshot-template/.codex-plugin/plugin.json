@@ -1,0 +1,36 @@
+{
+  "name": "appstore-screenshot-template",
+  "version": "0.1.0",
+  "description": "Reconstruct App Store screenshots for free. Adapt and keep editing with your own AI on Pro.",
+  "author": {
+    "name": "Crescreendo",
+    "url": "https://crescreendo.com"
+  },
+  "homepage": "https://github.com/rkdals0203/appstore-screenshot-template",
+  "repository": "https://github.com/rkdals0203/appstore-screenshot-template",
+  "license": "MIT",
+  "keywords": [
+    "app-store",
+    "screenshots",
+    "design",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "App Store Screenshot Template",
+    "shortDescription": "Turn App Store screenshots into editable templates.",
+    "longDescription": "Reconstruct an App Store screenshot set in Crescreendo for free. Manual editing and PNG export stay free; adapting it to your app and continued AI editing after your confirmation require Pro. Includes the skill and remote MCP connection. Sign-in and project access approval are required. Availability follows the server policy.",
+    "developerName": "Crescreendo",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://crescreendo.com",
+    "defaultPrompt": [
+      "Reconstruct this App Store screenshot set in Crescreendo."
+    ],
+    "brandColor": "#FFCC99"
+  }
+}

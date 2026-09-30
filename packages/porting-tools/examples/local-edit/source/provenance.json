@@ -1,0 +1,11 @@
+{
+  "purpose": "Original installation and editing fixture; not an App Store port",
+  "artwork": "Screen graphics and document authored for this example; no third-party screenshot",
+  "font": {
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf",
+    "license": "SIL Open Font License 1.1",
+    "notice": "source/OFL.txt",
+    "modified": false,
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "@crescreendo/porting-tools",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Source collection, document checks and scoped cloud transfers for App Store screenshot reconstruction",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "porting-tools": "./dist/public-cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./source": {
+      "types": "./dist/source.d.ts",
+      "import": "./dist/source.js"
+    },
+    "./pixels": {
+      "types": "./dist/pixel-comparison.d.ts",
+      "import": "./dist/pixel-comparison.js"
+    },
+    "./project": {
+      "types": "./dist/project-browser.d.ts",
+      "import": "./dist/project-browser.js",
+      "require": "./dist/project-browser.js"
+    },
+    "./files": {
+      "types": "./dist/files.d.ts",
+      "import": "./dist/files.js",
+      "require": "./dist/files.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.node.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@crescreendo/design-core": "0.1.0",
+    "fflate": "0.8.2",
+    "sharp": "0.35.4",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "canvas": {
+    "width": 1284,
+    "height": 2778,
+    "gutter": 0
+  },
+  "assets": [
+    {
+      "id": "grid",
+      "kind": "illustration"
+    },
+    {
+      "id": "replacement-landscape",
+      "kind": "illustration"
+    },
+    {
+      "id": "replacement-square",
+      "kind": "illustration"
+    }
+  ],
+  "frames": [
+    {
+      "type": "FRAME",
+      "id": "frame-a",
+      "index": 0,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#15232b",
+          "opacity": 1
+        }
+      ],
+      "children": [
+        {
+          "id": "tilted-card",
+          "frame": {
+            "x": 96.30000000000001,
+            "y": 293.2333333333333,
+            "width": 492.20000000000005,
+            "height": 1018.5999999999999
+          },
+          "rotation": 12,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "IMAGE",
+          "assetRef": "grid",
+          "assetKind": "illustration",
+          "scaleMode": "FILL",
+          "tilt": {
+            "rotationX": 28,
+            "rotationY": -36
+          },
+          "cornerRadius": 47.080000000000005,
+          "filters": {},
+          "effects": [],
+          "crop": {
+            "x": 12,
+            "y": 8,
+            "scale": 1.25
+          }
+        },
+        {
+          "id": "flat-phone",
+          "frame": {
+            "x": 695.5,
+            "y": 185.2,
+            "width": 492.20000000000005,
+            "height": 1450.7333333333331
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "MOCKUP",
+          "device": {
+            "type": "phone",
+            "frameStyle": "flat"
+          },
+          "screenBinding": {
+            "assetRef": "grid"
+          },
+          "tilt": {
+            "rotationX": 0,
+            "rotationY": 0
+          },
+          "frameStyle": {
+            "borderRadius": 32,
+            "bezelWidth": 8,
+            "bezelColor": "#fafafa"
+          },
+          "shadow": {
+            "enabled": false,
+            "blur": 0,
+            "offsetY": 0,
+            "color": "#000000"
+          },
+          "effects": []
+        },
+        {
+          "id": "independent-shared-image",
+          "frame": {
+            "x": 128.4,
+            "y": 1743.9666666666665,
+            "width": 492.20000000000005,
+            "height": 617.3333333333333
+          },
+          "rotation": -8,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "IMAGE",
+          "assetRef": "grid",
+          "assetKind": "illustration",
+          "scaleMode": "FIT",
+          "tilt": {
+            "rotationX": -30,
+            "rotationY": 26
+          },
+          "cornerRadius": 47.080000000000005,
+          "filters": {},
+          "effects": []
+        },
+        {
+          "id": "panorama-card",
+          "frame": {
+            "x": 1005.8000000000001,
+            "y": 1975.4666666666665,
+            "width": 535,
+            "height": 524.7333333333333
+          },
+          "rotation": 9,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "IMAGE",
+          "assetRef": "grid",
+          "assetKind": "illustration",
+          "scaleMode": "FILL",
+          "tilt": {
+            "rotationX": 35,
+            "rotationY": 28
+          },
+          "cornerRadius": 47.080000000000005,
+          "filters": {},
+          "effects": []
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "frame-b",
+      "index": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#213945",
+          "opacity": 1
+        }
+      ],
+      "children": [
+        {
+          "id": "rotated-group",
+          "frame": {
+            "x": 192.60000000000002,
+            "y": 524.7333333333333,
+            "width": 813.2,
+            "height": 1142.0666666666666
+          },
+          "rotation": -14,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "GROUP",
+          "children": [
+            {
+              "id": "grouped-card",
+              "frame": {
+                "x": 53.5,
+                "y": 108.03333333333333,
+                "width": 642,
+                "height": 740.8
+              },
+              "rotation": -8,
+              "opacity": 1,
+              "visible": true,
+              "locked": false,
+              "type": "IMAGE",
+              "assetRef": "grid",
+              "assetKind": "illustration",
+              "scaleMode": "STRETCH",
+              "tilt": {
+                "rotationX": -24,
+                "rotationY": 40
+              },
+              "cornerRadius": 47.080000000000005,
+              "filters": {},
+              "effects": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "crescreendo",
+  "interface": {
+    "displayName": "Crescreendo"
+  },
+  "plugins": [
+    {
+      "name": "appstore-screenshot-template",
+      "source": {
+        "source": "local",
+        "path": "./plugins/appstore-screenshot-template"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "appstore-screenshot-template",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "npm run build --workspace @crescreendo/design-core && npm run build --workspace @crescreendo/porting-tools",
+    "test": "node --test test/*.node.mjs && npm run test --workspace @crescreendo/porting-tools"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "appstore-screenshot-template",
+  "version": "0.1.0",
+  "description": "Reconstruct App Store screenshots for free. Adapt and keep editing with your own AI on Pro.",
+  "author": {
+    "name": "Crescreendo",
+    "url": "https://crescreendo.com"
+  },
+  "homepage": "https://github.com/rkdals0203/appstore-screenshot-template",
+  "repository": "https://github.com/rkdals0203/appstore-screenshot-template",
+  "license": "MIT",
+  "keywords": [
+    "app-store",
+    "screenshots",
+    "design",
+    "mcp"
+  ]
+}

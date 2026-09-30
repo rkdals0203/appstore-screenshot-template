@@ -1,0 +1,139 @@
+{
+  "name": "@crescreendo/design-core",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./document": {
+      "types": "./dist/design-document.d.ts",
+      "import": "./dist/design-document.js",
+      "require": "./dist/design-document.js"
+    },
+    "./metadata": {
+      "types": "./dist/metadata.d.ts",
+      "import": "./dist/metadata.js",
+      "require": "./dist/metadata.js"
+    },
+    "./color-tokens": {
+      "types": "./dist/color-tokens.d.ts",
+      "import": "./dist/color-tokens.js",
+      "require": "./dist/color-tokens.js"
+    },
+    "./query": {
+      "types": "./dist/design-document-query.d.ts",
+      "import": "./dist/design-document-query.js",
+      "require": "./dist/design-document-query.js"
+    },
+    "./transform": {
+      "types": "./dist/design-transform.d.ts",
+      "import": "./dist/design-transform.js",
+      "require": "./dist/design-transform.js"
+    },
+    "./hierarchy": {
+      "types": "./dist/design-document-hierarchy.d.ts",
+      "import": "./dist/design-document-hierarchy.js",
+      "require": "./dist/design-document-hierarchy.js"
+    },
+    "./patch-policy": {
+      "types": "./dist/design-layer-patch-policy.d.ts",
+      "import": "./dist/design-layer-patch-policy.js",
+      "require": "./dist/design-layer-patch-policy.js"
+    },
+    "./operations": {
+      "types": "./dist/design-document-operations.d.ts",
+      "import": "./dist/design-document-operations.js",
+      "require": "./dist/design-document-operations.js"
+    },
+    "./typography": {
+      "types": "./dist/design-typography-system.d.ts",
+      "import": "./dist/design-typography-system.js",
+      "require": "./dist/design-typography-system.js"
+    },
+    "./visual-text-layout": {
+      "types": "./dist/visual-text-layout.d.ts",
+      "import": "./dist/visual-text-layout.js",
+      "require": "./dist/visual-text-layout.js"
+    },
+    "./font-weight-resolution": {
+      "types": "./dist/font-weight-resolution.d.ts",
+      "import": "./dist/font-weight-resolution.js",
+      "require": "./dist/font-weight-resolution.js"
+    },
+    "./asset-ref": {
+      "types": "./dist/asset-ref.d.ts",
+      "import": "./dist/asset-ref.js",
+      "require": "./dist/asset-ref.js"
+    },
+    "./panorama-projection": {
+      "types": "./dist/panorama-projection.d.ts",
+      "import": "./dist/panorama-projection.js",
+      "require": "./dist/panorama-projection.js"
+    },
+    "./resolution-adaptation": {
+      "types": "./dist/resolution-adaptation.d.ts",
+      "import": "./dist/resolution-adaptation.js",
+      "require": "./dist/resolution-adaptation.js"
+    },
+    "./resolution-adaptation-schema": {
+      "types": "./dist/resolution-adaptation-schema.d.ts",
+      "import": "./dist/resolution-adaptation-schema.js",
+      "require": "./dist/resolution-adaptation-schema.js"
+    },
+    "./ui-zoom": {
+      "types": "./dist/ui-zoom.d.ts",
+      "import": "./dist/ui-zoom.js",
+      "require": "./dist/ui-zoom.js"
+    },
+    "./effect-css": {
+      "types": "./dist/effect-css.d.ts",
+      "import": "./dist/effect-css.js",
+      "require": "./dist/effect-css.js"
+    },
+    "./paint-css": {
+      "types": "./dist/paint-css.d.ts",
+      "import": "./dist/paint-css.js",
+      "require": "./dist/paint-css.js"
+    },
+    "./gradient-geometry": {
+      "types": "./dist/gradient-geometry.d.ts",
+      "import": "./dist/gradient-geometry.js",
+      "require": "./dist/gradient-geometry.js"
+    },
+    "./design-document-json-schema": {
+      "types": "./dist/design-document-json-schema.d.ts",
+      "import": "./dist/design-document-json-schema.js",
+      "require": "./dist/design-document-json-schema.js"
+    },
+    "./image-plane": {
+      "types": "./dist/image-plane.d.ts",
+      "import": "./dist/image-plane.js",
+      "require": "./dist/image-plane.js"
+    }
+  },
+  "dependencies": {
+    "zod": "4.3.6"
+  },
+  "files": [
+    "dist",
+    "schema",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "license": "MIT"
+}

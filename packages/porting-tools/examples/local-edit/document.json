@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 2,
+  "canvas": {
+    "width": 1284,
+    "height": 2778,
+    "gutter": 80
+  },
+  "frames": [
+    {
+      "type": "FRAME",
+      "id": "overview",
+      "index": 0,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#241832",
+          "opacity": 1
+        }
+      ],
+      "children": [
+        {
+          "id": "headline",
+          "frame": {
+            "x": 100,
+            "y": 210,
+            "width": 1084,
+            "height": 358.4
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "TEXT",
+          "characters": "A little clarity.\nEvery day.",
+          "style": {
+            "fontFamily": "Inter",
+            "fontWeight": 650,
+            "fontSize": 128,
+            "lineHeight": 1.08,
+            "textAlign": "left"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#f4edff",
+              "opacity": 1
+            }
+          ],
+          "textAutoResize": "HEIGHT",
+          "effects": []
+        },
+        {
+          "id": "caption",
+          "frame": {
+            "x": 100,
+            "y": 590,
+            "width": 1084,
+            "height": 134.39999999999998
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "TEXT",
+          "characters": "Make space for what matters.",
+          "style": {
+            "fontFamily": "Inter",
+            "fontWeight": 650,
+            "fontSize": 48,
+            "lineHeight": 1.08,
+            "textAlign": "left"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#c4b4d4",
+              "opacity": 1
+            }
+          ],
+          "textAutoResize": "HEIGHT",
+          "effects": []
+        },
+        {
+          "id": "device",
+          "frame": {
+            "x": 217,
+            "y": 900,
+            "width": 850,
+            "height": 1558
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "MOCKUP",
+          "device": {
+            "type": "phone",
+            "frameStyle": "flat"
+          },
+          "screenBinding": {
+            "appImageIndex": 0
+          },
+          "tilt": {
+            "rotationX": 0,
+            "rotationY": 0
+          },
+          "frameStyle": {
+            "borderRadius": 65,
+            "bezelWidth": 8,
+            "bezelColor": "#faf7ff"
+          },
+          "shadow": {
+            "enabled": true,
+            "blur": 48,
+            "offsetY": 25,
+            "color": "#00000055"
+          },
+          "effects": []
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "detail",
+      "index": 1,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#eee7f5",
+          "opacity": 1
+        }
+      ],
+      "children": [
+        {
+          "id": "detail-title",
+          "frame": {
+            "x": 100,
+            "y": 210,
+            "width": 1084,
+            "height": 358.4
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "TEXT",
+          "characters": "Your rhythm,\nat a glance.",
+          "style": {
+            "fontFamily": "Inter",
+            "fontWeight": 650,
+            "fontSize": 128,
+            "lineHeight": 1.08,
+            "textAlign": "left"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#30203c",
+              "opacity": 1
+            }
+          ],
+          "textAutoResize": "HEIGHT",
+          "effects": []
+        },
+        {
+          "id": "card",
+          "frame": {
+            "x": 90,
+            "y": 850,
+            "width": 1104,
+            "height": 1630
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "RECTANGLE",
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#fffaff",
+              "opacity": 1
+            }
+          ],
+          "strokes": [],
+          "strokeWeight": 0,
+          "cornerRadius": 70,
+          "effects": []
+        },
+        {
+          "id": "screen-crop",
+          "frame": {
+            "x": 137,
+            "y": 950,
+            "width": 1010,
+            "height": 1420
+          },
+          "rotation": 0,
+          "opacity": 1,
+          "visible": true,
+          "locked": false,
+          "type": "IMAGE",
+          "assetRef": "screen",
+          "assetKind": "screenshot",
+          "scaleMode": "FIT",
+          "filters": {},
+          "effects": []
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "screen",
+      "kind": "screenshot"
+    }
+  ],
+  "tokens": {
+    "typography": {
+      "headline": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontSize": {
+            "value": 128,
+            "unit": "px"
+          },
+          "fontWeight": 650,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          },
+          "lineHeight": 1.08
+        },
+        "$extensions": {
+          "crescreendo": {
+            "name": "Headline",
+            "role": "headline",
+            "variant": "default",
+            "source": "user",
+            "style": {
+              "fontFamily": "Inter",
+              "fontWeight": 650,
+              "fontSize": 128,
+              "lineHeight": 1.08,
+              "letterSpacing": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
