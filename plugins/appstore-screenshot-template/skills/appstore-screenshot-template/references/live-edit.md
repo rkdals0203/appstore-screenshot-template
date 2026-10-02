@@ -4,25 +4,18 @@ Use `get_project` for the known document ID before every follow-up and check its
 not change that ID. Use the latest revision/hash in `apply_project_revision`, including
 a stable mutation request ID. Send only the intended edits, preserving unrelated work.
 
-Before adapting a reconstruction to another app, check `canAdaptWithAi` and ask the owner
-to confirm the source reconstruction in the editor if its phase is still `reconstruction`.
-Prepare only the content and layout changes the user requested; preserve unrelated edits,
-image frames, tilt, crop and device pose. Do not assume template adaptation requires a
-new document or changing the app destination.
+Adaptation and continued edits using the user's own AI are free, including in a guest
+workspace. Read the latest capabilities; no reconstruction-confirmation or Pro gate is
+required for this path. Prepare only the changes the user requested, preserving image
+frames, tilt, crop and device pose. Do not assume adaptation needs a new document or app.
+Crescreendo's hosted AI is a separate account-and-credit operation on published templates.
 
 For an authorized adaptation to the user's app, follow
 [Reference adaptation](reference-adaptation.md). It is the same design guidance
 used by Create's separate reference-adaptation path; it does not change the
 original-reconstruction task or authorize a different server execution mode.
 
-With the Pro-editing policy active, source corrections are free before owner confirmation;
-subsequent MCP design changes and AI language creation require Pro. `save_version` remains
-available within ordinary access. `ai_editing_upgrade_required` is not retryable until
-access changes. Show the returned editor/billing links; never bypass it through a new draft
-or browser automation. The owner can still edit manually and export. After payment, read
-access and revision again before continuing.
-
-The server checks subscription, workflow, ownership, connection scope, revision and active editor state. Human
+The server checks document ownership, connection scope, revision and active editor state. Human
 IME input, dragging and unsaved changes take priority. On `editor_busy`, allow those
 edits to finish; on revision conflict, fetch the latest state and reconcile. Do not
 force overwrite, create a replacement project, or repeat an uncertain request with a

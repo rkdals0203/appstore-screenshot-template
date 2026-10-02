@@ -13,14 +13,14 @@
 
 > **Cloud preview.** Install the plugin or skill below and use the hosted editor. No local editor download. [Verification and known limits](docs/release-checklist.md).
 
-> **Available now:** reconstruct, edit with your connected AI or manually, save one app, and export watermark-free PNGs. **Pro is coming soon:** new subscriptions and the planned Pro AI-editing restriction are not enabled. Your AI provider bills its own usage; the connected service reports current access.
+> **Start without an account:** reconstruct, edit with your own AI or manually, and export watermark-free PNGs. Sign in when you save to your app. Your AI provider bills its own usage.
 
 ## Quick start
 
 ### 1. Install the plugin for your AI
 
 The plugin bundles the reconstruction skill and Crescreendo's remote MCP connection.
-Choose your host, install, then sign in when prompted. No editor or Chromium download.
+Choose your host, install, then approve the AI connection in the temporary editor. No editor or Chromium download.
 
 <details open>
 <summary><strong>Codex</strong></summary>
@@ -30,7 +30,7 @@ codex plugin marketplace add rkdals0203/appstore-screenshot-template
 codex plugin add appstore-screenshot-template@crescreendo
 ```
 
-In Codex, open the plugin and use **Connect** to sign in and choose project access.
+In Codex, open the plugin and use **Connect** to approve access to this temporary work. No account is needed to start.
 Start a new conversation if the installed skill or tools do not appear.
 
 </details>
@@ -43,7 +43,7 @@ claude plugin marketplace add rkdals0203/appstore-screenshot-template
 claude plugin install appstore-screenshot-template@crescreendo --scope user
 ```
 
-Open `/mcp`, select the plugin's Crescreendo server, and complete authentication.
+Open `/mcp`, select the plugin's Crescreendo server, and approve the AI connection. This OAuth step does not require a Crescreendo account.
 Restart the session if the plugin is not loaded yet.
 
 </details>
@@ -58,7 +58,7 @@ npx skills add rkdals0203/appstore-screenshot-template
 Requires Node.js 22.20+ for the current `skills` installer.
 
 Give your agent the App Store request below. On first use it runs the bundled setup
-helper for Codex or Claude Code, then guides you through sign-in. Installation itself
+helper for Codex or Claude Code, then guides you through AI connection approval. Installation itself
 only copies the skill; it does not change MCP settings or grant account access.
 If the host needs a fresh session to load tools, resume the same request there.
 
@@ -89,11 +89,9 @@ Adapt this draft for my app using the screenshots I attached.
 Update the headlines and colors while keeping the design editable.
 ```
 
-When the Pro editing policy launches, the editor will ask you to **Confirm reconstruction**
-yourself. Original review corrections will remain free; AI adaptation and later AI editing
-will require Pro. Manual screen replacement, text editing and PNG export will remain free.
+Reconstruction, adaptation with your own AI, manual editing and PNG export are free.
 
-Use **Save to project** to choose an existing app, a GitHub repository, or a new app. Saving is your choice; your AI does not submit contribution consent. Free supports one app with multiple project documents. A second app requires Pro. PNG export has no watermark.
+Use **Save to project** to sign in and choose an existing app, find your app on the App Store, or add it manually. The same document continues after sign-in. Saving is your choice; your AI does not submit contribution consent. Free supports one app with multiple project documents. A second app requires Pro. PNG export has no watermark.
 
 ## Replace the screen. Keep the composition.
 
@@ -123,13 +121,13 @@ Edit and export first. Save to your app when you want to keep working. Time comp
 | Angled cards | Image content separate from tilt, crop and layout |
 | Photos and app UI | Movable, replaceable images; their internal pixels are not all separate text objects |
 
-Reconstruction preserves the reference first. Manual adaptation is free. Adapting it with your AI is a separate Pro editing request once the policy is active.
+Reconstruct the reference first, then adapt it with your own AI or edit it directly.
 
 ## Requirements and costs
 
 Use an AI agent that can inspect images, access MCP, run tools, and read local files. Image reconstruction additionally needs an image tool connected to that agent. Codex and Claude Code are the supported setup targets. The standalone installer requires Node.js 22.20+; the bundled helper and local source tools support Node.js 20.19+. See [tested versions and release limits](docs/setup.md).
 
-Your AI agent and image tools use your existing provider's limits and billing. The only Crescreendo MCP tool that runs Crescreendo's own AI is the optional `start_adaptation`, which adapts a published Crescreendo template to your app and spends your Crescreendo AI credits after you approve the estimate; every other tool does not call paid generation models. New accounts get a one-time credit trial. Editing and watermark-free PNG export are available on Free. Planned Pro pricing is $12/month or $99/year with 100 Crescreendo AI credits each month, AI adaptation, continued AI editing, language variants, more apps and full version history. New purchases and the AI-editing restriction are currently disabled; this is not a promise of unlimited free AI editing.
+Your AI agent and image tools use your existing provider's limits and billing. The only Crescreendo MCP tool that runs Crescreendo's own AI is the optional `start_adaptation`, which adapts a published Crescreendo template to your app and spends your Crescreendo AI credits after you approve the estimate; every other tool does not call paid generation models. New accounts get a one-time credit trial. Editing and watermark-free PNG export are available on Free. Guest workspaces do not create accounts or issue trial credits. See [Crescreendo](https://crescreendo.com) for current subscription availability and pricing.
 
 Working source files stay on your computer. Required document assets are uploaded to Crescreendo, and your AI provider may process your inputs. Cloud editing and rendering require a connection.
 
@@ -141,9 +139,9 @@ Working source files stay on your computer. Required document assets are uploade
 
 **Is the editor open source?** This repository contains the MIT-licensed skill, document core and source/transfer tools. The hosted editor, renderer, authentication and billing are separate private software. No editor build is distributed here.
 
-**Plugin or skill?** Both use the same reconstruction instructions. The plugin also bundles the remote MCP configuration. The standalone skill prepares that connection on first use. Both require your Crescreendo sign-in and access approval.
+**Plugin or skill?** Both use the same reconstruction instructions. The plugin also bundles the remote MCP configuration. The standalone skill prepares that connection on first use. Both require your approval to connect the AI. Account sign-in is needed only for saving to an app or using Crescreendo AI.
 
-**Must I save before exporting?** No. A draft can be edited and exported. **Save to project** keeps it under your app. Local working JSON is not a saved Cloud project.
+**Must I sign in or save before exporting?** No. Approve the AI connection, then edit and export in the same browser. **Save to project** keeps it under your app. Local working JSON is not a saved Cloud project.
 
 **Does saving publish my work?** No. An unchanged reconstruction with sufficient source evidence may offer a separate, unchecked contribution option. Your private saved project is independent of any consented contribution copy.
 

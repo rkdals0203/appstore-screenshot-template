@@ -2,7 +2,7 @@
 
 [README](../README.md)
 
-The public packages are `@crescreendo/design-core` (DesignDocument v2 and operations) and `@crescreendo/porting-tools` (collection, local working files, comparison and transfer). Cloud preview version: `0.1.1`. They are distributed as source in this GitHub repository, not as npm registry releases.
+The public packages are `@crescreendo/design-core` (DesignDocument v2 and operations) and `@crescreendo/porting-tools` (collection, local working files, comparison and transfer). They are distributed as source in this GitHub repository, not as npm registry releases. The plugin manifest identifies the public release; the server's `protocolVersion` identifies its separate API contract.
 
 Run `porting-tools --help` for exact commands. Local commands are `capture`, `files`, `asset`, `compare`, `init`, `check`, `read`, `save`, `pack`, `unpack`, and `upload`. They do not create a permanent app or run a local editor.
 
@@ -23,7 +23,7 @@ The uploader checks content SHA-256, size, destination origin and upload path. I
 
 Use the connected MCP tool schemas as the live contract. `create_draft` returns an editor URL and revision. `apply_project_revision` requires the current revision/hash and an idempotent request ID. `complete_reconstruction` fixes the source reconstruction baseline once. Only the user-facing Save to project flow promotes it to an app.
 
-`render_project` captures in the authenticated, open editor tab. Keep the requested document and language open. It and `get_render_result` identify the exact rendered revision and every frame. Pixel comparisons diagnose differences, not aesthetic quality.
+`render_project` captures in the open editor tab with the work's guest session or account session. Account sign-in is not required for guest rendering. Keep the requested document and language open. It and `get_render_result` identify the exact rendered revision and every frame. Pixel comparisons diagnose differences, not aesthetic quality.
 
 ## Source builds
 

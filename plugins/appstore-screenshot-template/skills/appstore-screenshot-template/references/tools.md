@@ -1,7 +1,8 @@
 # Cloud operations
 
-Use the actual connected Crescreendo MCP schema. The Cloud source package version is
-`0.1.1`; the connection uses the deployed production service.
+Use the actual connected Crescreendo MCP schema. The connection uses the production
+service. Its `protocolVersion` is a wire-contract identifier, not the public plugin's
+release version; read current capabilities instead of inferring features from that name.
 If tools are unavailable, follow [first-use connection](connection.md) to prepare the
 current host and authenticate. Report any remaining connection blocker before porting.
 Never install an old local-editor release as a fallback.
@@ -59,13 +60,14 @@ the default browser. Do not require Chrome or an already running browser. A remo
 shell is not the user's desktop; if no host capability can open it there, provide the exact
 editor link and ask the user to open it. Reuse that link/tab on retries instead of opening duplicates.
 
-Verify the requested document is loaded and signed in when browser inspection is available.
+Verify the requested document is loaded with its guest or account access when browser inspection is available.
 An opener command's success alone does not prove the editor is ready; without inspection,
-use the render job's progress as confirmation. If sign-in is needed, ask the user to complete
-it in that browser. MCP authentication does not establish the browser's session.
+use the render job's progress as confirmation. Reuse the browser which approved guest
+access; a copied URL does not carry its private cookie. Account connection tokens do not
+establish a browser account session.
 
 Open the editor before calling `render_project`; keep the requested document and language
-visible. `execution: editor_browser` requires that authenticated editor tab.
+visible. `execution: editor_browser` requires that authorized editor tab.
 While queued, `requiredAction: keep_editor_open` means open/resume the tab and let pending
 edits save; it is not a request to start a local server. If the tab closes, capture pauses
 until an eligible tab takes the expired lease. Poll the same job instead of creating duplicates.
@@ -96,15 +98,16 @@ Use that CLI's resolved absolute path for commands from the project directory. T
 source packages are not npm registry releases. The build installs no editor or Chromium.
 Image generation/restoration uses the host's image tools.
 
-## AI editing access
+## Guest and account access
 
-`get_capabilities.aiAccess` reports `policyVersion`, `enforced`, `pro`,
-`canAdaptWithAi`, `canCreateLocale`, and `checkoutAvailable`. `get_project.aiAccess`
-also reports `phase`, `confirmedAt`, `canEditWithAi`, `canConfirm`, `reason`, and
-editor/billing URLs. Confirmation is a browser-owner action, not an MCP tool.
-`complete_reconstruction` fixes contribution evidence only.
+`get_capabilities.authentication` is `guest` or `account`. A guest response includes the
+temporary editor URL, document creation permission, free external-AI editing access and
+`adaptation.requiresLogin` / `credits.requiresLogin`. It never includes a credit balance.
+The guest can attach one document; document reads, revisions, uploads, history and renders
+remain limited to that work. Login transfers its identity without broadening this grant.
 
-A denied change returns `ai_editing_upgrade_required` (403), `saved: false`, the
-editor/billing URLs and current checkout availability. Nothing has been applied.
-Check access before asset preparation. Resume the same document with a fresh revision
-after subscription verification. Never use a success-page URL as proof of payment.
+`get_project.aiAccess` reports current actions and revision. External AI editing is free;
+`complete_reconstruction` freezes contribution evidence, not a paid editing phase.
+`login_required` means choose Save to project or Crescreendo AI in the editor.
+`guest_session_expired` means this work can no longer be accessed. On a rate limit, respect
+`Retry-After`; polling and token refresh do not extend a session's lifetime.

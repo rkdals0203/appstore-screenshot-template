@@ -39,15 +39,18 @@ Crescreendo plugin is reused. A disabled plugin remains disabled.
 - A conflicting/disabled standalone entry or an unreadable inventory is a blocker.
   Explain the issue instead of removing or overwriting it.
 
-The browser sign-in and access approval belong to the user. Allowing new drafts is
-enough for reconstruction; existing apps need not be selected. Approval is not implied
-by installing the skill. Never paste session cookies, bearer tokens, or callback codes
-into conversation. Do not inspect the host credential store.
+The connection approval belongs to the user. In the guest flow, it appears over the
+real empty editor and grants access only to this temporary work. No account login is
+required. Account connections can still select their existing apps separately. Installing
+the skill does not imply consent. Never paste cookies, tokens or callback codes into chat,
+and do not inspect host credential storage.
 
 Confirm `get_capabilities` actually succeeds before collecting and reconstructing a
 large set. If a host needs a new conversation, preserve the requested App Store URL
 in your handoff. Do not describe settings registration as a successful tool call.
 
-An editor opens only after `create_draft` returns its URL. Reuse/open it through the
-host browser tools, then request rendering. Plugin installation does not open an empty
-editor, download Chromium, or install an editor runtime.
+The guest editor opens as part of first connection, before the document exists. OAuth
+uses one callback popup while that tab stays open. If the popup is blocked, complete the
+host's standard callback in that tab, then reopen `get_capabilities.editorUrl` in the same
+browser. Reuse that editor when `create_draft` attaches its first document. Never assume
+another browser has the guest cookie. Plugin installation alone does not open an editor.

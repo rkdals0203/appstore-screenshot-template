@@ -22,9 +22,11 @@ yourself before asking the user to configure a server manually:
 2. Run `node <skill-directory>/scripts/connect.mjs --host codex` or `--host claude`.
    It reuses a matching connection or registers the official HTTPS server through that
    host's CLI. An installed plugin already supplies the server; do not register it twice.
-3. Complete the host's connection flow. If setup did not already sign in, run the
+3. Complete the host's connection flow. If setup did not already authorize the connection, run the
    returned login command, or use the installed plugin's native connection controls.
-   The user completes browser login and chooses access; never request tokens in chat.
+   The user approves the AI connection in the temporary editor. A guest does not need
+   a Crescreendo account. The CLI may call this OAuth action “login”; it is not account
+   sign-up. Never approve the modal for the user or request tokens in chat.
 4. Call `get_capabilities` again. A successful configuration command is not proof of
    authentication or loaded tools. If a fresh session is needed, say so and give the
    same App Store request to resume. Do not keep retrying setup or start substantial
@@ -46,7 +48,8 @@ draft; do not request an upgrade before porting.
 Upload files using `prepare_upload` and the scoped binary transfer instructions, then
 `finalize_upload`. Use `create_draft` with the canonical document, verified resources,
 ordered source capture IDs and App Store source. This creates no app and consumes no app
-slot. Read [cloud operations](references/tools.md) for request and retry semantics.
+slot. A guest connection can create one document in its temporary workspace; retry
+that document rather than creating another. Read [cloud operations](references/tools.md) for request and retry semantics.
 
 Open the returned editor URL yourself before rendering, using the host's browser tool or
 local desktop URL opener. Reuse the draft's tab when available; otherwise open one, even
@@ -61,8 +64,10 @@ baseline once; it is not a design approval and cannot be reset after adaptation.
 
 The user can edit and export
 without first saving to an app. The editor's **Save to project** action is the user's
-choice: an existing app, a verified GitHub repository, or a new manually named app.
-Multiple documents can belong to one app. A second app requires Pro; AI adaptation and editing also follow the access policy below.
+choice: an existing app, an App Store search result, or a new manually named app.
+Saving first asks a guest to sign in, then transfers the same document to that account.
+Multiple documents can belong to one app. A second app requires Pro. Using the user’s
+own AI to adapt or edit the document remains free.
 Do not submit this save or contribution consent on the user's behalf merely because
 porting was requested. There is no draft list or abandoned-work recovery workflow.
 
@@ -70,42 +75,42 @@ For follow-up AI edits, retain the document ID and read the latest revision. Pro
 to a saved project preserves that identity and does not expand the AI connection's access
 to the destination app's other documents. See [live editing](references/live-edit.md).
 
-## Reconstruction review and Pro editing
+## Your AI and account access
 
-Read `get_capabilities.aiAccess` at the start and `get_project.aiAccess` before follow-up
-work. These report the active policy, subscription, document phase and allowed actions.
-Do not infer access from plan names or plugin installation. Under `reconstruction-pro-v1`
-when `enforced` is true:
+Read `get_capabilities` at the start and `get_project` before follow-up work. When
+`authentication` is `guest`, retain the returned temporary `editorUrl` and reuse the
+browser that approved the connection. A URL alone grants no access in another browser.
+Original reconstruction, adaptation with the user's AI, further edits and language
+variants do not require Pro or account login. Do not ask for **Confirm reconstruction**
+as a payment step. `complete_reconstruction` only freezes contribution evidence.
 
-- Original reconstruction and corrections remain free while the phase is `reconstruction`.
-- `complete_reconstruction` freezes contribution evidence, not the user's confirmation.
-  After it, continue requested original corrections without resetting that baseline.
-- The owner confirms the result with **Confirm reconstruction** in the editor. Never
-  click it for them or treat saving/exporting as confirmation. Later MCP design edits
-  require Pro; manually editing, saving and exporting remain free.
-- Before adapting to the user's app, check `canAdaptWithAi` and the phase before preparing
-  replacement assets or writing the new design. If confirmation is needed, direct the
-  owner to the existing editor tab. If Pro is needed, show the returned billing link.
-- MCP language-variant creation requires Pro, including during reconstruction review.
-- On `ai_editing_upgrade_required`, stop the paid operation. Do not reframe it as source
-  correction, create another reconstruction draft, or drive browser controls to bypass
-  the limit. If checkout is unavailable, say so and retain the same document.
+Sign-in is required for **Save to project** and Crescreendo's own paid AI. On
+`login_required`, direct the user to that action in the existing editor. A
+`guest_session_expired` response is different: stop using that session, preserve local
+source work and explain that a new connection is needed. Do not create a replacement
+account, silently overwrite an existing project or retry an uncertain edit with a new ID.
+A deployment without guest support may still require its existing account connection;
+report the server's actual state rather than claiming guest access is active.
 
-When enforcement is not yet active, report the current capabilities rather than claiming
-the upcoming limit is already in effect. After an upgrade, reread capabilities and the
-latest document; do not replay a stale edit. Follow [live editing](references/live-edit.md)
-for adaptation, replacement and conversational changes. Your host's own AI/image billing
-still applies; the Crescreendo subscription does not include those model calls.
+After sign-in, reread the same document and its revision. The original guest connection
+still only controls this document; account ownership does not grant access to other apps
+or permission to create another project. Follow [live editing](references/live-edit.md).
+The host's own AI and image-tool usage is billed by that host.
 
 ## Crescreendo AI adaptation (paid, credits)
 
 When the user wants a finished set for their own app, offer Crescreendo AI as one option
 next to doing the work yourself. It adapts one of Crescreendo's published templates to
 the user's app and spends the user's Crescreendo AI credits. Pro includes monthly credits;
-new accounts start with a one-time trial.
+real accounts start with a one-time trial. Guest connections create neither accounts
+nor trial credits. This tool does not edit an arbitrary reconstructed document.
 
 - Check `get_capabilities.adaptation.available` and `credits`. If adaptation is not
-  available, do not mention it.
+  available, do not offer it. If `requiresLogin` is true, direct the user to **Crescreendo
+  AI** in the existing editor before credit lookup, preparation or model requests.
+- After login, reread capabilities. If this document-only connection lacks new-project
+  permission, use the account's connection approval to explicitly grant it, or continue
+  in the Create screen. Do not expand the guest grant or automatically retry a paid task.
 - Find a template with `search_templates`. Show the name, slide count and
   `estimatedCredits`, and let the user choose.
 - Ask the user to approve the estimated credits. Pass exactly that limit as `maxCredits`;

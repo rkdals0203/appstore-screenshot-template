@@ -42,8 +42,8 @@ Ask your agent to reconstruct an App Store link. The skill first tries connected
 tools. If none work, it runs its bundled `scripts/connect.mjs` for the active host.
 The helper checks existing settings and registers only the official server through
 the host's CLI. It never overwrites a conflicting server or reads stored credentials.
-The agent then starts sign-in if needed. Complete browser login and access approval
-yourself. A fresh conversation may be needed before the host exposes the new tools.
+The agent then starts OAuth if needed. Approve the AI connection yourself in the temporary
+editor. The CLI may call this action “login”; a Crescreendo account is not required. A fresh conversation may be needed before the host exposes the new tools.
 
 The skill installer copies files; it does not execute this helper at installation
 time. No npm post-install hook edits your configuration. Node.js 20.19+ and the
@@ -51,9 +51,8 @@ current host's CLI must be available. You do not need a separate example request
 
 ## Access and first use
 
-Allow new reconstruction drafts. Existing apps are optional; leave them unchecked
-when the agent only needs its newly created drafts. Settings lists connected AI
-clients and lets you revoke them. A configured server is not proof of authorization:
+The connection modal grants access only to this temporary work. Existing account
+connections can still select their apps. A configured server is not proof of authorization:
 the agent must successfully call `get_capabilities` before reconstructing.
 
 Give your agent an App Store link. It collects the references, uploads required
@@ -63,7 +62,13 @@ local-editor, or browser-download step.
 
 You do not need to open Chrome beforehand. The agent reuses the draft's tab or opens
 your browser using the host's tools. A remote/headless AI that cannot open a browser
-on your computer instead provides the editor link. Complete browser sign-in if asked.
+on your computer instead provides the editor link. Reuse the browser that approved the
+connection: the URL alone cannot open the document in another browser. OAuth uses one
+callback popup; when blocked, finish in the same tab and reopen the returned editor URL.
+
+**Save to project** asks you to sign in and then choose an existing app, an App Store
+result or a manually named app. The document and its edits stay intact. Canceling sign-in
+or save keeps the current work open. Crescreendo AI also requires an account and credits.
 
 ## Manual recovery
 
@@ -117,17 +122,13 @@ Official references: [Codex plugins](https://developers.openai.com/plugins/build
 · [Claude Code plugins](https://code.claude.com/docs/en/plugins-reference)
 · [Claude Code MCP](https://code.claude.com/docs/en/mcp).
 
-## Reconstruction and AI editing policy
+## Reconstruction and AI editing
 
-The skill/plugin and MCP connection are free. Original reconstruction and its review
-corrections are free until the owner confirms the result in the editor. Manual editing,
-local screen replacement through the editor, saving one app and watermark-free PNG export
-remain free. Pro enables adaptation to your app, continued AI editing, AI language variants,
-more apps and full history. AI providers bill their own usage. The optional
-`start_adaptation` tool is different: Crescreendo AI does that work and it spends
-Crescreendo AI credits after the user approves the estimate (Pro includes 100 per month).
+The skill, plugin, connection, reconstruction, editing with your own AI, manual editing
+and watermark-free PNG export are free. Free accounts can save multiple documents under
+one app. Pro supports more apps and full history. Your AI provider bills its own usage.
 
-During this preview, new Pro purchases and the AI-editing restriction are disabled.
-The server's `aiAccess.enforced` and per-document capabilities report current access.
-The agent follows those values; it does not require a confirmation button or upgrade
-that the service has not enabled. The planned policy above is not a permanent free-AI promise.
+The optional `start_adaptation` tool runs Crescreendo AI on a published template, with
+account login and approved Crescreendo AI credits. Guest connections cannot query a wallet
+or start that paid task. This integration does not change existing account credit or billing
+rules. Always read the service's current capabilities before continuing a paid operation.

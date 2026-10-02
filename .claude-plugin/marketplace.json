@@ -8,7 +8,7 @@
     {
       "name": "appstore-screenshot-template",
       "source": "./plugins/appstore-screenshot-template",
-      "description": "Reconstruct App Store screenshots for free. Adapt and keep editing with your own AI on Pro."
+      "description": "Reconstruct App Store screenshots and edit with your AI. Start without an account; sign in to save."
     }
   ],
   "metadata": {

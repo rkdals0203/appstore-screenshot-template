@@ -40,7 +40,7 @@ export function connect({ host, check = false }, run = execute) {
   if (!Array.isArray(plugins)) throw Error('Unsupported plugin inventory; update the host CLI. No configuration was changed.')
   const installed = plugins.find(p => p.id === PLUGIN || p.pluginId === PLUGIN)
   if (installed?.enabled === false) throw Error('The Crescreendo plugin is disabled. Enable it in the host before retrying; no standalone server was added.')
-  if (installed) return { status: 'plugin_configured', host, authentication: 'Use the host plugin connection controls to sign in to Crescreendo. Do not add a duplicate standalone server.' }
+  if (installed) return { status: 'plugin_configured', host, authentication: 'Use the host plugin connection controls to approve AI access. Guest editing does not require an account. Do not add a duplicate standalone server.' }
 
   let exists = false, name = SERVER
   if (host === 'codex') {
@@ -80,7 +80,7 @@ export function connect({ host, check = false }, run = execute) {
   }
   return {
     status: exists ? 'already_configured' : check ? 'missing' : 'configured', host, server: name, url: MCP_URL,
-    authentication: 'Configuration is not authentication. If add already completed sign-in, do not log in again. Otherwise run the login command below.',
+    authentication: 'Configuration is not authentication. If add already completed OAuth approval, do not repeat it. Otherwise run the login command below.',
     loginCommand: [host, 'mcp', 'login', name],
     next: 'Refresh/restart the AI session if tools are missing, then call get_capabilities before reconstructing.',
   }
