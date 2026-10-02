@@ -123,7 +123,9 @@ The skill/plugin and MCP connection are free. Original reconstruction and its re
 corrections are free until the owner confirms the result in the editor. Manual editing,
 local screen replacement through the editor, saving one app and watermark-free PNG export
 remain free. Pro enables adaptation to your app, continued AI editing, AI language variants,
-more apps and full history. AI providers bill their own usage.
+more apps and full history. AI providers bill their own usage. The optional
+`start_adaptation` tool is different: Crescreendo AI does that work and it spends
+Crescreendo AI credits after the user approves the estimate (Pro includes 100 per month).
 
 During this preview, new Pro purchases and the AI-editing restriction are disabled.
 The server's `aiAccess.enforced` and per-document capabilities report current access.

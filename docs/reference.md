@@ -2,7 +2,7 @@
 
 [README](../README.md)
 
-The public packages are `@crescreendo/design-core` (DesignDocument v2 and operations) and `@crescreendo/porting-tools` (collection, local working files, comparison and transfer). Initial release: `0.1.0`. They are distributed as source in this GitHub repository, not as npm registry releases.
+The public packages are `@crescreendo/design-core` (DesignDocument v2 and operations) and `@crescreendo/porting-tools` (collection, local working files, comparison and transfer). Cloud preview version: `0.1.1`. They are distributed as source in this GitHub repository, not as npm registry releases.
 
 Run `porting-tools --help` for exact commands. Local commands are `capture`, `files`, `asset`, `compare`, `init`, `check`, `read`, `save`, `pack`, `unpack`, and `upload`. They do not create a permanent app or run a local editor.
 

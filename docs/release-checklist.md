@@ -1,6 +1,6 @@
 # Cloud preview verification
 
-Version `0.1.0` uses the hosted Crescreendo editor and remote MCP. It contains
+Version `0.1.1` uses the hosted Crescreendo editor and remote MCP. It contains
 no editor binary, Chromium installer, or prior local-editor Git history. Public code
 is MIT licensed; the hosted service is separate.
 
@@ -32,10 +32,17 @@ standalone skills installer also installed the same skill and setup helper for C
 Claude Code. No normal host settings or existing OAuth grants were changed. This checks
 published installation; fresh login was not repeated as part of that installation test.
 
-The source is verified with a clean install, build and all 51 tests. The
-[public source checks](https://github.com/rkdals0203/appstore-screenshot-template/actions/workflows/ci.yml)
-run on Ubuntu with Node.js 22. Example attachments retain their registered original
-bytes, and project checks validate their hashes.
+The public source checks run a clean installation, build and test suite on Ubuntu with
+Node.js 22. See the [CI history](https://github.com/rkdals0203/appstore-screenshot-template/actions/workflows/ci.yml).
+Example attachments retain their registered original bytes; checks verify their hashes.
+
+Version 0.1.1 updates the shared adaptation guidance, native object and image-plane
+instructions, and the optional credit-funded Crescreendo AI workflow. The public skill
+uses the service's reported capabilities and access rules. Create's experimental
+reference-image generator remains restricted to Development verification accounts;
+this release does not enable it for ordinary users or claim a new reconstruction
+quality benchmark. Earlier host login checks are retained above rather than presented
+as new checks for this patch.
 
 ## Known limits
 
