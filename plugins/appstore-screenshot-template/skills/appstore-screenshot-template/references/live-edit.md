@@ -10,6 +10,11 @@ Prepare only the content and layout changes the user requested; preserve unrelat
 image frames, tilt, crop and device pose. Do not assume template adaptation requires a
 new document or changing the app destination.
 
+For an authorized adaptation to the user's app, follow
+[Reference adaptation](reference-adaptation.md). It is the same design guidance
+used by Create's separate reference-adaptation path; it does not change the
+original-reconstruction task or authorize a different server execution mode.
+
 With the Pro-editing policy active, source corrections are free before owner confirmation;
 subsequent MCP design changes and AI language creation require Pro. `save_version` remains
 available within ordinary access. `ai_editing_upgrade_required` is not retryable until

@@ -97,6 +97,31 @@ latest document; do not replay a stale edit. Follow [live editing](references/li
 for adaptation, replacement and conversational changes. Your host's own AI/image billing
 still applies; the Crescreendo subscription does not include those model calls.
 
+## Crescreendo AI adaptation (paid, credits)
+
+When the user wants a finished set for their own app, offer Crescreendo AI as one option
+next to doing the work yourself. It adapts one of Crescreendo's published templates to
+the user's app and spends the user's Crescreendo AI credits. Pro includes monthly credits;
+new accounts start with a one-time trial.
+
+- Check `get_capabilities.adaptation.available` and `credits`. If adaptation is not
+  available, do not mention it.
+- Find a template with `search_templates`. Show the name, slide count and
+  `estimatedCredits`, and let the user choose.
+- Ask the user to approve the estimated credits. Pass exactly that limit as `maxCredits`;
+  never raise it on your own.
+- Upload the user's real app screenshots with `prepare_upload`/`finalize_upload` and pass
+  their upload IDs as `screens`. Each upload can start one project.
+- Call `start_adaptation` with a stable `requestId`. Retrying with the same `requestId`
+  returns the same project and never starts a second adaptation.
+- Ask the user to open the returned `editorUrl`. Crescreendo AI analyzes the app and
+  proposes a direction there; only the user approves it, in the editor. Never approve it
+  for them or drive the browser to do so.
+- Poll `get_adaptation` and relay its `next` guidance. When the phase is `ready`, read the
+  project with `get_project` and review it with `render_project`.
+- On `insufficient_ai_credits` or `app_limit_reached`, stop and show `upgradeUrl`. On
+  `credit_limit_exceeded`, ask before retrying with a new limit.
+
 ## Establish the source
 
 Use [the command reference](references/tools.md). Collect the URL's country and entire

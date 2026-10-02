@@ -4,6 +4,10 @@ Use this for direct document authoring as well as reused assets. It needs no lib
 command or particular tracing tool. The task is to preserve observed appearance and
 intended editing, not to redesign the set into a consistent style of your own.
 
+Use the shared [observation and comparison procedure](visual-reference-method.md).
+The additional choices below concern original reconstruction; adaptation changes
+the user's content and brand while preserving the observed design decisions.
+
 ## Choose a representation
 
 Inspect the relevant original region at native resolution. Identify the visible shape,

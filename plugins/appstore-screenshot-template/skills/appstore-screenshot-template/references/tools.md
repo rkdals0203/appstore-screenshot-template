@@ -1,7 +1,7 @@
 # Cloud operations
 
 Use the actual connected Crescreendo MCP schema. The Cloud source package version is
-`0.1.0`; the connection uses the deployed production service.
+`0.1.1`; the connection uses the deployed production service.
 If tools are unavailable, follow [first-use connection](connection.md) to prepare the
 current host and authenticate. Report any remaining connection blocker before porting.
 Never install an old local-editor release as a fallback.
@@ -19,6 +19,9 @@ Never install an old local-editor release as a fallback.
 | `get_render_result`, `cancel_render` | Observe every frame or cancel an unfinished job |
 | `complete_reconstruction` | Fix the completed reconstruction baseline once with document ID, stable request ID and base revision/hash |
 | `list_projects` | Saved projects permitted to the connection; no unsaved-draft inventory |
+| `search_templates` | Published templates Crescreendo AI can adapt, with slide count and `estimatedCredits`; free |
+| `start_adaptation` | **Paid.** `requestId`, `templateVersionId`, `app`, upload IDs in `screens`, user-approved `maxCredits`; returns the project ID and editor URL |
+| `get_adaptation` | Phase of a Crescreendo AI adaptation (`waiting_for_editor`, `awaiting_approval`, `generating`, `finishing`, `failed`, `ready`) and the next step; free |
 
 `source` contains the App Store `appId`, `url`, optional `storefront`, ordered image
 resource IDs in `captures`, and an optional `repositoryHint` (`owner/repo`). The hint
