@@ -1,6 +1,6 @@
 # Reference adaptation
 
-Instruction version: reference-adaptation-v3
+Instruction version: reference-adaptation-v3.1
 
 Use this guidance for adapting a design to the user's app. Original screenshot
 reconstruction remains a separate task. Read the current document, permissions,
@@ -122,3 +122,5 @@ wait and resume the same task if it closes.
 An adapted user-app result is not an original-reconstruction baseline or an
 automatic official-template contribution. Continue to honor the service's
 current editing, saving, and billing permissions.
+
+The content response contains only the supplied content fields. Project identity, image dimensions, permissions and published-template slots are supplied by the host. For a contract correction, follow the server-provided repair targets and allowed operations; retain unaffected items. Array edits refer to positions in the original failed response, never positions shifted by an earlier edit.

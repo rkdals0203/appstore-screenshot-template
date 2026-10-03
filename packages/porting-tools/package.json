@@ -1,6 +1,6 @@
 {
   "name": "@crescreendo/porting-tools",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "Source collection, document checks and scoped cloud transfers for App Store screenshot reconstruction",
   "type": "module",
@@ -45,7 +45,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@crescreendo/design-core": "0.1.2",
+    "@crescreendo/design-core": "0.1.3",
     "fflate": "0.8.2",
     "sharp": "0.35.4",
     "zod": "4.3.6"

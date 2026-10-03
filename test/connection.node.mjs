@@ -29,7 +29,7 @@ test('both plugins, marketplaces and standalone metadata use the same endpoint a
   for (const host of ['codex', 'claude']) {
     const p = json(`${pluginPath}.${host}-plugin/plugin.json`)
     assert.equal(p.name, 'appstore-screenshot-template')
-    assert.equal(p.version, '0.1.2')
+    assert.equal(p.version, '0.1.3')
     assert.equal(p.license, 'MIT')
   }
   assert.deepEqual(json(`${pluginPath}.mcp.json`), { mcpServers: { crescreendo: { type: 'http', url: MCP_URL } } })

@@ -88,3 +88,7 @@ is covered alongside ordinary document and contract autosave tests.
 Reconstruction, editing with the user's AI, manual editing and PNG export need no account.
 Saving and optional Crescreendo AI require sign-in. User AI editing has no Pro gate.
 Payment activation and account credit policies are separate from this integration.
+
+## Version 0.1.3 — scoped adaptation corrections
+
+The shared adaptation instructions distinguish model-authored content from host-owned identity and describe scoped correction operations. Guest cloud editing and MCP connection behavior are unchanged. This guidance update does not certify Create generation quality, enable its restricted verification path for general users, or distribute the private generator, editor, model responses, or billing verification tools.
